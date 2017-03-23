@@ -1,0 +1,41 @@
+<div class="container">
+   <!-- <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+        <input id="" type="text" class="form-control" ng-model="nameFilter" placeholder="Search..." />
+    </div>
+    <br />
+       -->
+    <div class="jumbotron">
+        <h8 style="font-size:55px" class="text-center">Premier League 2016/17</h8>
+    </div>
+    <table class="table table-bordered">
+       <!-- <thead>
+            <tr class="info"><th colspan="4">Premier League 2016/17</th></tr>
+        </thead> -->
+        <tbody>
+            <tr class="info">
+                <td>Rank</td>
+                <td>Team</td>
+                <td>Games Played</td>
+                <td>Goals</td>
+                <td>Goals Against</td>
+                <td>Points</td>
+              
+            </tr>
+            <tr ng-repeat="team in teams"> 
+                <!--  ng-class="{danger: team.rank == '1'}" for highlighting    -->
+                <td>{{team.position}}</td>
+                <td>
+                    <img style="width: 30px; height: 20px;"  src={{team.crestURI}} />
+                    <a href="#/players/{{ team._links.team.href | limitTo:-2 }}">                     
+                        {{team.teamName}}
+                    </a>          
+                 </td> 
+                <td>{{team.playedGames}} </td> 
+                <td>{{team.goals}} </td> 
+                <td>{{team.goalsAgainst}} </td> 
+                <td>{{team.points}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>/
